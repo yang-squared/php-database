@@ -9,6 +9,7 @@
     <ol>
       <li>HTML</li>
     </ol>
+    <a href="create.php">create</a>
     <h2>Welcome</h2>
     데이터베이스 php 연동 연습페이지
   </body>

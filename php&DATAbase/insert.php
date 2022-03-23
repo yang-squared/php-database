@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("127.0.0.1",'root','******','test');
+$conn = mysqli_connect("127.0.0.1",'root','b689041','test');
 mysqli_query($conn, "
   insert into topic
     (title, decription, created)
