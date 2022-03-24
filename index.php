@@ -1,6 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost",'root',
-  'b689041','test');
+  '******','test');
   $sql = "SELECT * FROM topic";
   $result = mysqli_query($conn,$sql);
   $list = '';
