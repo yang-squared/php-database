@@ -1,9 +1,10 @@
 <?php
-$conn = mysqli_connect("127.0.0.1",'root','b689041','test');
+$conn = mysqli_connect("localhost",'root',
+'b689041','test');
 mysqli_query($conn, "
-  insert into topic
-    (title, decription, created)
-    VALUE(
+  INSERT INTO topic
+    (title, description, created)
+    VALUES(
       'MySQL',
       'MySQL is ...',
       NOW()
