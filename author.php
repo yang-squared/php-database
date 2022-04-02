@@ -1,6 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost",'root',
-  'b689041','test');
+  '*******','test');
   ?>
 <!doctype html>
 <html>
