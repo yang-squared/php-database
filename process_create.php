@@ -1,6 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost",'root',
-'b689041','test');
+'*******','test');
 
 $filtered = array(
   'title'=> mysqli_real_escape_string($conn,$_POST['title']),
