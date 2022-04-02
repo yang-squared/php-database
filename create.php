@@ -1,29 +1,22 @@
 <?php
 $conn = mysqli_connect("localhost",'root',
-  '******','test');
-  $sql = "SELECT * FROM topic";
-  $result = mysqli_query($conn,$sql);
-  $list = '';
-  while($row = mysqli_fetch_array($result)){
+  'b689041','test');
+$sql = "SELECT * FROM topic";
+$result = mysqli_query($conn,$sql);
+$list = '';
+while($row = mysqli_fetch_array($result)){
+    $escaped_title =htmlspecialchars($row['title']);
     $list = $list."<li><a href=\"index.php?id={$row['id']}\">
-    {$row['title']}
+    {$escaped_title}
     </a></li>";
   }
-  if(isset($_GET['id'])){
-  $sql = "SELECT * FROM topic WHERE id={$_GET['id']}";
-  $result = mysqli_query($conn,$sql);
-  $row = mysqli_fetch_array($result);
-  $article = array(
-  'title'=>$row['title'],
-  'description'=>$row['description']
-);
-}
-  else{
-    $article = array(
-    'title'=>'Welcome',
-    'description'=>'php&DATABase 연습페이지입니다.'
-  );
+$sql ="SELECT * FROM author";
+$result = mysqli_query($conn,$sql);
+$select_form = '<select name ="author_id">';
+  while($row = mysqli_fetch_array($result)){
+    $select_form .= '<option value="'.$row['id'].'">'.$row['name'].'</option>';
   }
+$select_form .= '</select>';
   ?>
 <!doctype html>
 <html>
@@ -40,6 +33,7 @@ $conn = mysqli_connect("localhost",'root',
         <p><input type="text" name ="title" placecholder="title"></p>
         <p><textarea name='description'
         placecholder ="description"> </textarea></p>
+        <?=$select_form?>
         <p><input type="submit"></p>
     </form>
   </body>

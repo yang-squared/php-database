@@ -1,6 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost",'root',
-  '******','test');
+  'b689041','test');
 $sql = "SELECT * FROM topic LIMIT 10";
 $result = mysqli_query($conn, $sql);
 while($row = mysqli_fetch_array($result)){
